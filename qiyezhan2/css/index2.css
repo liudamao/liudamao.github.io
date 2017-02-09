@@ -1,0 +1,388 @@
+body,ul,ol,dl,h1,h2,h3,h4,h5,h6,p,input{padding:0;margin:0;list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+body{font-size:12px; font-family:"微软雅黑";color:#fff;background-color: #FFF;}
+/*banner*/
+.banner-container{
+    width:100%;height:950px;
+    background:url(../images/banner.jpg) no-repeat center;
+    background-size:cover;
+    position: relative;
+}
+.header{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.top{
+    width: 1200px;height: 106px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.logo{
+    display: block;
+    float: left;
+}
+.login-top{
+    float: right;
+    padding-top: 40px;
+}
+.login-top a{
+    display: block;
+    padding: 0 14px;
+    height: 26px;
+    color: #698c5f;
+    font-size: 14px;
+    line-height: 26px;
+    float: left;
+    border: 1px solid transparent;
+    text-align: center;
+    transition-duration: 300ms;
+}
+.menu{
+    width:1200px;height: 49px;
+    position: relative;
+    margin: 0 auto;
+    border-top:1px solid #758693;
+    border-bottom:1px solid #758693;
+}
+.menu a{
+    display: inline-block;
+    line-height: 52px;
+    font-size: 16px;
+    color: #698c5f;
+    padding: 0 65px;
+    height: 49px;
+}
+.ab-1{
+    top: 330px;
+    opacity: 1;
+    width:100%;
+    text-align: center;
+    position: absolute;
+    height: 23px;
+    display: block;
+}
+.a{
+    color: #666;
+    text-decoration: none;
+}
+.ab-2{
+    top: 366px;
+    opacity: 1;
+    width:100%;
+    text-align: center;
+    position: absolute;
+    height: 65px;
+    display: block;
+}
+.ab-3{
+    top: 510px;
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    height: 242px;
+    left:0;
+    display: block;
+}
+/*关于海鸟*/
+.come{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: url("../images/back3.jpg") center top repeat-y;
+}
+.title{
+    height: 240px;
+    width: 100%;
+}
+.tit-ch{
+    width: 100%;
+    text-align: center;
+    padding-top: 90px;
+    font-size: 30px;
+    font-family: "宋体";
+    color: #798351;
+}
+.tit-en{
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+}
+.w1920{
+    width: 1920px;
+    left: 50%;
+    margin-left: -960px;
+    position: relative;
+}
+.come-ing{
+    width: 50%;
+    float: left;
+}
+.come-box{
+    float: right;
+    width: 20%;
+    padding: 0 25% 0 5%;
+    background: #fff;
+}
+.company-f{
+    width: 100%;
+    padding-top: 25%;
+}
+.company-f span{
+    display: block;
+    width: 100%;
+    background: url("../images/ab07.png") left bottom no-repeat;
+    height: 66px;
+}
+.ab-cover{
+    width: 100%;
+    overflow: hidden;
+    color: #888;
+    line-height: 24px;
+    margin-top: 4%;
+    position: relative;
+    height: 120px;
+    font-size: 15px;
+}
+.ab-u1{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.ab-btns{
+    margin-top: 20px;
+}
+.ab-btns a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 8px;
+}
+.lf-btn{
+    background: url("../images/ab-u1.png") no-repeat;
+}
+.rf-btn{
+    background: url("../images/ab-d1.png") no-repeat;
+}
+/*海鸟愿景*/
+.pray{
+    width: 100%;
+    position: relative;
+    background: url("../images/back4.jpg") center top no-repeat;
+}
+img{
+    border: 0px;
+}
+.pray-c{
+    width: 988px;
+    height: 309px;
+    margin: 0 auto;
+    position: relative;
+}
+.pray-c span{
+    width: 82px;
+    height: 82px;
+    position: absolute;
+    top: -44px;
+    left: 60px;
+    z-index: 10;
+    display: block;
+}
+
+.pray-text{
+    margin-top: 0px;
+    opacity: 1;
+    width: 100%;
+    padding-top: 26px;
+    float: left;
+}
+.tits{
+    width: 700px;
+    height: 48px;
+    float: left;
+    line-height: 24px;
+    color: #adadad;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+/*海鸟产业*/
+.industry{
+    width: 100%;
+    /*height: 680px;*/
+    position: relative;
+    background: url("../images/back5.jpg") center top no-repeat;
+}
+.title{
+    height: 200px;
+}
+.indus{
+    width: 988px;
+    /*height: 480px;*/
+    margin: 0 auto;
+    position: relative;
+}
+.left-bar{
+    width: 50px;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    float: left;
+}
+.green-cur{
+    color: #788b25;
+}
+.left-bar a{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    line-height: 22px;
+    font-family: "宋体";
+}
+.left-bar i{
+    display: block;
+    background: url("../images/its.jpg") center top no-repeat;
+    height: 15px;
+    width: 100%;
+}
+.right-content{
+    width: 850px;
+    float: right;
+    background: url("../images/ab08.png") right 96px no-repeat;
+    padding-top: 110px;
+}
+.img-indus{
+    position: relative;
+    width: 246px;
+    height: 216px;
+    overflow: hidden;
+}
+.img-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.img-wrap img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bt1{
+    position: absolute;
+    width: 40px;
+    height: 56px;
+    z-index: 100;
+    top: 90px;
+    transition-duration: 300ms;
+}
+.bt2{
+    position: absolute;
+    width: 40px;
+    height: 56px;
+    z-index: 100;
+    top: 90px;
+    transition-duration: 300ms;
+ }
+.in-tit{
+    font-size: 22px;
+    color: #788b25;
+    line-height: 42px;
+    padding-top: 36px;
+    display: block;
+    font-family: "宋体";
+}
+.in-text{
+    line-height: 20px;
+    font-size: 14px;
+    color: #a0a0a0;
+}
+/*品牌理念*/
+.concept{
+    width: 100%;
+    height: 555px;
+    position: relative;
+    background: url("../images/back6.jpg") center top no-repeat;
+}
+.title{
+    height: 200px;
+}
+.concept-c{
+    width: 1002px;
+    height: 355px;
+    background: url("../images/cc1.jpg") no-repeat;
+    margin: 0 auto;
+}
+.brand-c{
+    width: 50px;
+    padding-right: 75px;
+    color: #959d72;
+    font-size: 32px;
+    font-family: "宋体";
+    text-align: center;
+    float: right;
+}
+.concept-c p{
+    display: block;
+    width: 20px;
+    padding: 0 3px;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    float: right;
+    font-style: normal;
+    line-height: 15px;
+}
+/*合作伙伴*/
+.company{
+    width: 100%;height: 210px;
+}
+.title{
+    width: 100%;height: 200px;
+
+}
+.company-sub{
+    width: 1010px;
+    margin: 60px auto;
+}
+.company-sub a{
+    display: inline-block;
+    width: 333px;
+    text-align: center;
+    color: #666;
+    text-decoration: none;
+}
+/*底部*/
+.footer{
+    width: 100%;
+    height: 166px;
+    background: #606849;
+    text-align: center;
+    padding-top: 30px;
+}
+.w1004{
+    width: 1004px;
+    margin: 0 auto;
+}
+.img{
+    border: 0px;
+}
+.footer p{
+    width: 100%;
+    color: #d1d5c7;
+    font-size: 14px;
+    line-height: 24px;
+}
+.footer p a{
+    color: #d1d5c7;
+    font-size: 14px;
+    line-height: 24px;
+    transition-duration: 300ms;
+}
