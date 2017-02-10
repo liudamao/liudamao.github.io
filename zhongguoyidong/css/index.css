@@ -50,7 +50,7 @@ body{font-size:12px; font-family:"宋体";color:#333;}
 .zuo-list4{width:159px;height:62px;border-bottom:1px solid #ededed;text-align:center;line-height:62px;background:url(../image/byw.jpg)36px 19px;background-repeat:no-repeat;}
 .zuo-list5{width:159px;height:62px;border-bottom:1px solid #ededed;text-align:center;line-height:62px;background:url(../image/tpj.jpg)36px 19px;background-repeat:no-repeat;}
 .zuo-list6{width:159px;height:62px;border-bottom:1px solid #ededed;text-align:center;line-height:62px;background:url(../image/grzx.jpg)36px 19px;background-repeat:no-repeat;}
-.zhongjian{width:740px;height:350px;float:left;background:blue;position:relative;margin-left:10px;overflow:hidden;}
+.zhongjian{width:740px;height:350px;float:left;position:relative;margin-left:10px;overflow:hidden;}
 .zhongjian .img{width:740px;height:350px;}
 .zhongjian a{display:block;}
 .btnbox{width:140px;height:16px;position:absolute;left:300px;bottom:7px;}
