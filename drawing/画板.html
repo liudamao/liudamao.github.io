@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自制画板</title>
+    <script src="draw.js"></script>
+    <style>
+        .box{
+            width: 100%;height: 700px;
+            border: 1px solid #03ffec;
+        }
+        .controls{
+            width: 100%;height: 30px;
+            background: #16ff09;
+            display: flex;
+            justify-content: space-around;
+            line-height: 30px;
+        }
+        .content{
+            width: 100%;height: 670px;
+        }
+        canvas{
+            display: block;
+            background: #ccc;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="controls">
+        <label>选择形状
+            <select name="" id="shape">
+                <option value="line">线</option>
+                <option value="rect">矩形</option>
+                <option value="circle">圆</option>
+                <option value="dbx">多边形</option>
+                <option value="pencil">铅笔</option>
+            </select>
+        </label>
+        <label>选择样式
+            <select name="" id="style">
+                <option value="stroke">描边</option>
+                <option value="fill">填充</option>
+            </select>
+        </label>
+        <div>画笔颜色
+            <input type="color" id="color" >
+        </div>
+        <div>画布颜色
+            <input type="color" id="bgcolor">
+        </div>
+        <label>画笔粗细
+            <input type="number" value="1" min="1" max="10" id="width">
+        </label>
+        <label>选择边数
+            <input type="number" value="3" min="3" max="8" id="aside">
+        </label>
+    </div>
+    <div class="content">
+        <canvas  width="1200px" height="600px" id="canvas"></canvas>
+    </div>
+</div>
+</body>
+<script>
+    var canvas=document.querySelector("canvas");
+    var cobj=canvas.getContext("2d");
+    var bgcolor=document.querySelector("#bgcolor");
+    var shape=document.querySelector("#shape");
+    var style=document.querySelector("#style");
+    var color=document.querySelector("#color");
+    var width=document.querySelector("#width");
+    var aside=document.querySelector("#aside");
+    var qb=document.querySelector("#qb");
+
+    bgcolor.onchange=function () {
+        canvas.style.background=bgcolor.value;
+    };
+    var type="line";
+    shape.onchange=function () {
+        type=shape.value;
+    };
+    var st="stroke";
+    style.onchange=function () {
+        st=style.value;
+    };
+    var co="#000";
+    color.onchange=function () {
+        co=color.value;
+    };
+    var wi="1";
+    width.onchange=function () {
+        wi=width.value;
+    };
+    var s="3";
+    aside.onchange=function () {
+        s=aside.value;
+    };
+    var canvasHistory=[];
+    canvas.onmousedown=function (e) {
+        var sx=e.offsetX;
+        var sy=e.offsetY;
+        cobj.beginPath();
+        cobj.moveTo(sx,sy);
+        var draw=new Draw(cobj,{st,co,wi,s});
+        canvas.onmousemove=function (e) {
+            var ox=e.offsetX;
+            var oy=e.offsetY;
+            cobj.clearRect(0,0,1200,600);
+            if(canvasHistory.length>0){
+                cobj.putImageData(canvasHistory[canvasHistory.length-1],0,0);
+            }
+            draw[type](sx,sy,ox,oy);
+        };
+        canvas.onmouseup=function () {
+            canvas.onmousemove=null;
+            canvas.onmouseup=null;
+            var imagedata=cobj.getImageData(0,0,1200,600);
+            canvasHistory.push(imagedata);
+        }
+    }
+</script>
+</html>
