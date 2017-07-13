@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload=function () {
+//           构造函数
+            function Game(m,s,l,st) {
+                this.main=m;
+                this.obj={};//可比喻为字典  字母  left top ele
+                this.scorele=s;
+                this.scor=0;
+                this.lifeele=1;
+                this.life=5;
+                this.guanqia=st;
+                this.statenum=1;
+                this.interval=null;
+                this.height=m.offsetHeight;
+                this.state=false;
+                this.speed=5;
+            }
+//            封装原型
+            Game.prototype = {
+//                begin方法  开始游戏
+                begin: function () {
+                    this.state=true;
+//                    创建三个字母
+                    for (var i=0; i<3; i++) {
+                        this._createletter();
+                    }
+                    this._move();
+                    this._keydown();
+                },
+//                核心方法创建单个字母
+                _createletter: function () {
+//                    创建div  newletter是元素对象 可以加类名  改样式
+                    var newletter=document.createElement("div");
+                    newletter.className= "letter";
+//                    保证字母不重复
+                    do{
+//  得到随机的数字
+                        var randomnum=Math.floor(Math.random()*26+65);
+// 得到对应的字母
+                        var randomletter=String.fromCharCode(randomnum);
+                    }while(this.obj[randomletter]);
+//                    newletter.innerHTML=randomletter;
+                    newletter.style.backgroundImage=`url(sucai/${randomletter}.png)`;
+//                    保证位置不重叠
+                    do{
+                        var randomleft=Math.random()*(this.main.offsetWidth-80);
+//                        var randomleft=Math.random()*720;
+                    }while(this._check(randomleft));
+                    newletter.style.left=randomleft+"px";
+                    var randomtop=-Math.random()*100;
+                    newletter.style.top=randomtop+"px";
+                    this.obj[randomletter]={left:randomleft,top:randomtop,el:newletter};//完成字典
+                    this.main.appendChild(newletter);
+                },
+//                判断字母位置的方法
+                _check:function(left){   //不重叠
+                    for(var i in this.obj){
+                        if(left>this.obj[i].left-80&&left<this.obj[i].left+80){
+                            return true;
+                        }
+                    }
+                },
+//                移动的方法
+                _move:function(){
+//                    var that=this;
+                    this.interval=setInterval(function(){
+                        for(var i in this.obj){
+                            var t=this.obj[i].top;
+                            t+=this.speed;
+                            this.obj[i].top=t;
+                            this.obj[i].el.style.top=t+"px";
+                            if(t>this.height){
+                                this.main.removeChild(this.obj[i].el);
+                                delete this.obj[i];
+                                this._createletter();
+                                this.life--;
+                                if(this.life<0){
+                                    this._gameover();
+                                    return;
+                                }
+                                this.lifeele.innerHTML=this.life;
+                            }
+                        }
+                    }.bind(this),50)
+                },
+//                注册键盘事件
+                _keydown:function () {
+                    document.onkeydown=this.keydownhandler.bind(this);
+                },
+                _gameover:function(){
+                    clearInterval(this.interval);
+                    alert(`最终得分为${this.scor}`);
+                    this.scor=0;
+                    this.scorele.innerHTML=this.scor;
+                    this.life=5;
+                    this.lifeele.innerHTML=this.life;
+                    this.main.innerHTML="";
+                    this.obj={};
+                    this.state=false;
+                    this.statenum=1;
+                    this.guanqia.innerHTML=this.statenum;
+                    this.speed=5;
+                },
+                _guoguan:function () {
+                    this.statenum++;
+                    this.guanqia.innerHTML=this.statenum;
+                    if(this.statenum<5){
+                        this._createletter();
+                    }else{
+                        this.speed+=5;
+                    }
+                },
+                keydownhandler:function(e){
+                    var kc=e.keyCode;
+                    var l=String.fromCharCode(kc);
+                    if(this.obj[l]){
+                        this.main.removeChild(this.obj[l].el);
+                        delete this.obj[l];
+                        this._createletter();
+                        this.scor++;
+                        this.scorele.innerHTML=this.scor;
+                        if(this.scor%10==0){
+                            this._guoguan();
+                        }
+                    }
+                },
+                pause:function(){
+                    clearInterval(this.interval);
+                    document.onkeydown=null;
+                },
+                play:function(){
+                    this._move();
+                    this._keydown();
+                }
+            };
+
+            var main = document.querySelector(".main");
+//            实例化函数  并传参数main
+            var scor=document.querySelector(".scor p");
+            var life=document.querySelector(".life p");
+            var state=document.querySelector(".state p");
+            var game = new Game(main,scor,life,state);
+//            获取开始按钮
+            var start=document.querySelector(".start");
+            start.onclick = function () {
+                if(game.state==false){
+//                调用方法
+                    game.begin();
+                }
+            };
+            var pause=document.querySelector(".pause");
+            var flag=true;
+            pause.onclick=function(){
+                if(flag){
+                    game.pause();
+                    pause.innerHTML="继续"
+                }else{
+                    game.play();
+                    pause.innerHTML="暂停"
+                }
+                flag=!flag;
+            };
+
+
+
+        };
+    </script>
+    <style>
+        html,body{
+            height: 100%;overflow: hidden;
+            margin: 0;
+        }
+        p, h3{
+            margin: 0;  padding: 0;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .scene{
+            width: 1000px;height: 100%;
+            background: #09c;
+            margin: 0 auto;
+        }
+        .main{
+            width: 800px;height: 100%;
+            float: left;
+            position: relative;
+        }
+        .control{
+            width: 200px;height: 100%;
+            float: right;
+            background: #34ff0f;
+        }
+        .show{
+            width: 200px;height: 60px;
+            text-align: center;
+        }
+        .show h3{
+            font-size: 16px;
+        }
+        .show p{
+            width: 120px;height: 30px;
+            border-radius: 15px;
+            border: 1px solid #000;
+            background: #fff;
+            margin: 10px auto;
+            line-height: 30px;
+        }
+        .btn{
+            width: 100px;height: 30px;
+            margin: 30px auto;
+            background: #b0ffd5;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .letter{
+            width: 80px;height: 80px;
+            /*font-size: 30px;*/
+            /*font-weight: bold;*/
+            /*text-align: center;*/
+            /*line-height: 80px;*/
+            /*background: #fff;*/
+            position: absolute;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<div class="scene">
+    <div class="main"></div>
+    <div class="control">
+        <div class="show scor">
+            <h3>得分</h3>
+            <p>0</p>
+        </div>
+        <div class="show left">
+            <h3>生命值</h3>
+            <p>5</p>
+        </div>
+        <div class="show state">
+            <h3>关卡</h3>
+            <p>1</p>
+        </div>
+        <div class="btn start">开始</div>
+        <div class="btn pause">暂停</div>
+        <div class="btn end">结束</div>
+
+    </div>
+</div>
+</body>
+</html>
