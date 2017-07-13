@@ -1,9 +1,4 @@
-/*----
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
----*/
+
 html,body{
 	font-family: 'Lato', sans-serif;
 }
@@ -269,7 +264,6 @@ a.down{
 	display:inline-block;
 }
 .portfolio-grid p{
-	/*margin:0em 1em 0 1em;*/
 	color:#504A4C;
 	line-height:25px;
 }
@@ -341,7 +335,6 @@ a.portdown{
 	line-height:2em;
 }
 .footer-right{
-	/*text-align: right;*/
 	margin-top: 1.3em;
 }
 .footer-right .tel{
@@ -436,9 +429,6 @@ p.copy-right a{
  	.years p {
 		width: 60%;
 	}
-	/*.portfolio-grid p {*/
-		/*margin: 0.2em 0em 0 0em;*/
-	/*}*/
 	.footer-left p {
 		width: 90%;
 	}
@@ -450,9 +440,6 @@ p.copy-right a{
  	.years p {
 		width: 80%;
 	}
-	/*.portfolio-grid p {*/
-		/*margin: 0.2em 0em 0 0em;*/
-	/*}*/
 	.footer-left p {
 		width: 90%;
 	}
@@ -462,9 +449,6 @@ p.copy-right a{
     .footer-right .tel{
         width: 87%;
     }
-	/*.footer-right input[type="text"], .footer-right textarea {*/
-		/*width: 87%;*/
-	/*}*/
 	.headerbg {
 		min-height: 591px;
 	}
@@ -489,9 +473,6 @@ p.copy-right a{
  	.years p {
 		width: 80%;
 	}
-	/*.portfolio-grid p {*/
-		/*margin: 2em 0em 0 0em;*/
-	/*}*/
 	.footer-left p {
 		width: 90%;
 	}
@@ -501,9 +482,6 @@ p.copy-right a{
     .footer-right .tel{
         width: 100%;
     }
-	/*.footer-right input[type="text"], .footer-right textarea {*/
-		/*width: 100%;*/
-	/*}*/
 	.headerbg {
 		min-height:500px;
 	}
@@ -574,9 +552,6 @@ p.copy-right a{
  	.years p {
 		width: 100%;
 	}
-	/*.portfolio-grid p {*/
-		/*margin: 2em 0em 0 0em;*/
-	/*}*/
 	.footer-left p {
 		width: 90%;
 	}
@@ -676,9 +651,6 @@ p.copy-right a{
 		line-height: 1.6em;
 		padding: 0.5em 0 0 0;
 	}
-	/*.portfolio-grid p {*/
-		/*margin: 2em 0em 0 0em;*/
-	/*}*/
 	.footer-left p {
 		width: 100%;
 		margin: 0.8em 0 0 0;
@@ -689,9 +661,6 @@ p.copy-right a{
     .footer-right .tel{
         width: 100%;
     }
-	/*.footer-right input[type="text"], .footer-right textarea {*/
-		/*width: 100%;*/
-	/*}*/
 	.headerbg {
 		min-height: 457px;
 	}
@@ -806,10 +775,6 @@ p.copy-right a{
 		line-height: 1.6em;
 		padding: 0.5em 0 0 0;
 	}
-	/*.portfolio-grid p {*/
-		/*margin: 1.2em 0em 0 0em;*/
-		/*line-height: 1.5em;*/
-	/*}*/
 	.footer-left p {
 		width: 100%;
 		margin: 0.8em 0 0 0;
@@ -821,10 +786,6 @@ p.copy-right a{
         width: 100%;
         padding: 0.8em;
     }
-	/*.footer-right input[type="text"], .footer-right textarea {*/
-		/*width: 100%;*/
-		/*padding: 0.8em;*/
-	/*}*/
 	.headerbg {
 		min-height: 409px;
 	}
@@ -938,9 +899,5 @@ p.copy-right a{
 	.Portfolio-section h2 {
 		font-size: 1.6em;
 		padding: 1em 0 0.3em;
-	}
-	.footer-right input[type="submit"] {
-		float: none;
-		width:100%
 	}
 }
