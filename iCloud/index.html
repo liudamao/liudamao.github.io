@@ -1,0 +1,127 @@
+<!doctype html>
+<html ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-controller="ctrl">
+<!--遮罩-->
+<div class="mask" ng-show="settingFlag" ng-click="settingFlag=false"></div>
+<div class="left">
+    <div class="left-title">
+        <div class="logo">
+            iCloud
+        </div>
+        <div class="add" ng-click="addList()">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <ul class="left-list">
+        <!--<li class="active">-->
+            <!--<div class="color">-->
+                <!--<span></span>-->
+            <!--</div>-->
+            <!--<p>列表列表列表列表列表列表列表列表列表列表列表列表列表列表列表列表</p>-->
+        <!--</li>-->
+        <li ng-repeat="v in todos" ng-class="{'active':$index==index}"
+ng-click="selectList($index)">
+            <div class="color">
+                <span ng-style="{backgroundColor:v.color}"></span>
+            </div>
+            <p>{{v.title}}</p>
+        </li>
+    </ul>
+</div>
+<div class="right">
+    <div class="right-title">
+        <div class="title-left">
+            <!--<div class="icon">&#xe601;</div>-->
+            <input type="text" placeholder="搜索所有提醒">
+
+        </div>
+    </div>
+    <div class="right-bottom">
+        <div class="title">
+            <h3 ng-style="{'color':todos[index].color}">{{todos[index].title}}</h3>
+            <div class="setting" ng-style="{'color':todos[index].color}" ng-click="showSetting()">
+                选项
+            </div>
+
+            <div class="tips" ng-show="settingFlag">
+                <div class="tips-inner">
+                    <div class="tips-top">
+                        <input type="text" ng-model="changeTitle" ng-style="{color:changeColor}">
+                        <h4>列表颜色</h4>
+                            <ul class="color-list">
+                                <li
+                                        ng-repeat="c in colors"
+                                        ng-style="{backgroundColor:c,borderColor:changeColor==c?c:''
+                                      }"
+                                        ng-click="changeC(c)"
+                                ></li>
+                            </ul>
+                    </div>
+                    <div class="tips-bottom">
+                        <a href="" class="del" ng-click="delList()">删除</a>
+                        <div class="btn-group">
+                            <a href="" class="cancel" ng-click="cancel()">
+                                取消
+                            </a>
+                            <span></span>
+                            <a href="" class="finish" ng-click="finish()">
+                                完成
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="com">
+            <div class="com-title">
+                <div class="com-title-left">
+                    <div class="sj" ng-class="{'active':isShow}" ng-click="showComList()">
+                        <span ></span>
+                    </div>
+                    <span>
+                        已完成：{{ComNum}}项
+                    </span>
+                </div>
+                <a href="javascript:;" class="clear" ng-style="{color:todos[index].color}" ng-show="isShow" ng-click="clearComItem()">清除已完成事项</a>
+
+            </div>
+            <ul class="com-list" ng-show="isShow">
+                <!--<li class="active">-->
+                    <!--<span class="icon active"></span>-->
+                    <!--<p>今晚8点开会</p>-->
+                <!--</li>-->
+
+                <li ng-repeat="v in todos[index].todos | filter:true">
+                    <span class="icon" ng-style="{backgroundColor:todos[index].color,borderColor:todos[index].color}" ng-click="changeState(v,true)"></span>
+                    <p>{{v.title}}</p>
+                </li>
+            </ul>
+        </div>
+        <ul class="doing">
+            <li ng-repeat="v in todos[index].todos | filter:false">
+                <span class="icon" ng-style="{borderColor:todos[index].color}" ng-click="changeState(v,false)"></span>
+                <div class="box">
+                    <input type="text" ng-model="v.title">
+                </div>
+            </li>
+            <div class="newitem" ng-click="addItem()">
+                新项目...
+            </div>
+
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
