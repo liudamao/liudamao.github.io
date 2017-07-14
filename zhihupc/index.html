@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/index.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        <div class="logo">
+            <a href="#">
+                <img src="images/logo.png" alt="">
+            </a>
+        </div>
+        <ul class="nav">
+            <li><a href="#!/">首页</a></li>
+            <li ng-repeat="v in themes"><a href="#!/list/{{v.id}}" title="{{v.description}}">{{v.name}}</a></li>
+
+        </ul>
+
+    </div>
+    <div class="right">
+        <div class="content">
+            <div class="head">
+                <div class="title">浏览内容</div>
+                <div class="new">最新内容</div>
+            </div>
+            <div class="warp" ng-view="">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

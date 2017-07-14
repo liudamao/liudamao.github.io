@@ -1,0 +1,10 @@
+<!--{{data}}-->
+<link rel="stylesheet" href="#" ng-repeat="v in data.css">
+
+<!--{{data.css[0]}}-->
+<div class="content" style="width: 800px">
+    <div class="c-title">
+        {{data.title}}
+    </div>
+    <div class="c-content" ng-bind-html="data.body"></div>
+</div>

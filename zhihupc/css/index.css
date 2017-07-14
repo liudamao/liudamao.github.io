@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+    border: 0;
+    background: #f9f9f9;
+
+}
+ul,li{
+    list-style: none;
+}
+body,html{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.container{
+    width: 1200px;
+    height: auto;
+    background: #F9F9F9;
+    margin: 0 auto;
+}
+.container:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+.left{
+    width: 210px;
+    height: auto;
+    float: left;
+    background: #fff;
+}
+.left .logo{
+    width: 210px;
+    margin: 20px auto;
+}
+.left .logo img{
+    display: block;
+    margin: 0 auto;
+}
+.nav{
+    margin-top: 100px;
+}
+.nav li{
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.right{
+    width: 990px;
+    height: auto;
+    float: right;
+}
+.right .content{
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+}
+.right .content .head{
+    padding: 44px 0 41px;
+}
+.head .title{
+    font-size: 25px;
+    color: #333;
+    line-height: 25px;
+    height: 25px;
+    overflow: hidden;
+    float: left;
+    margin-left: 10px;
+}
+.head .new{
+    float: right;
+    color: #ccc;
+    font-size: 25px;
+    line-height: 25px;
+    margin-right: 10px;
+}
+.right .content .warp{
+    width: 990px;
+    height: auto;
+    margin: 30px auto;
+}
+.right .content .warp:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+.item{
+    box-sizing: border-box;
+    width: 300px;
+    margin: 15px;
+    background: #fff;
+    padding: 15px;
+    float: left;
+}
+.item .img{
+    width: 270px;
+    height: 270px;
+    margin-bottom: 15px;
+}
