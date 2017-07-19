@@ -23,15 +23,15 @@ var todos = [
                 time:2017-5-16
             },
             {
-                title:'2点上课',done:false,
+                title:'2点做项目',done:false,
                 time:2017-5-16
             },
             {
-                title:'6点上晚自习',done:false,
+                title:'6点下班',done:false,
                 time:2017-5-16
             },
             {
-                title:'8点下课',done:false,
+                title:'8点休息',done:false,
                 time:2017-5-16
             }
         ]
@@ -50,15 +50,15 @@ var todos = [
                 time:2017-5-16
             },
             {
-                title:'2点上课',done:true,
+                title:'2点做项目',done:true,
                 time:2017-5-16
             },
             {
-                title:'6点上晚自习',done:false,
+                title:'6点下班',done:false,
                 time:2017-5-16
             },
             {
-                title:'8点下课',done:false,
+                title:'8点休息',done:false,
                 time:2017-5-16
             }
         ]
@@ -77,15 +77,15 @@ var todos = [
                 time:2017-5-16
             },
             {
-                title:'2点上课',done:false,
+                title:'2点做项目',done:false,
                 time:2017-5-16
             },
             {
-                title:'6点上晚自习',done:false,
+                title:'6点下班',done:false,
                 time:2017-5-16
             },
             {
-                title:'8点下课',done:false,
+                title:'8点休息',done:false,
                 time:2017-5-16
             }
         ]
