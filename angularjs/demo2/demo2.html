@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+	app.controller('c',function($scope){
+		$scope.arr = [10,20,'3',43,34233,23];
+		$scope.str = "你好吗，张三";
+		$scope.person = [
+			{
+				id:1,
+				name:'张三',
+				age:21,
+				high:179
+			},
+			{
+				id:3,
+				name:'李四',
+				age:23,
+				high:169
+			},
+			{
+				id:2,
+				name:'王武',
+				age:20,
+				high:174
+			},
+			{
+				id:5,
+				name:'zhaoliu',
+				age:23,
+				high:178
+			}
+		]
+		var tag = "-";
+		$scope.setAttr = function(attr){
+			if(tag=='-'){
+				tag="+";
+			}else{
+				tag="-"
+			}
+			$scope.attr = tag+attr;
+		}
+		$scope.fn = function(el){
+			// console.log(el);
+			return el.age;
+		}
+
+		$scope.ss = function(){
+
+			console.log(arguments);
+			return $scope.s == arguments[0]
+		}
+	})
+	</script>
+</head>
+<body>
+	<div ng-controller="c">
+		<!-- {{arr|limitTo:2:0}}
+
+		{{str|limitTo:1:3}} -->
+
+		<!-- {{arr|orderBy:'-'}}
+
+		<ul>
+			<li ng-repeat="v in arr|orderBy:'-'|limitTo:3">{{v}}</li>
+		</ul> -->
+
+		<!-- <table>
+			<tr>
+				<th ng-click="setAttr('id')">id</th>
+				<th ng-click="setAttr('name')">姓名</th>
+				<th ng-click="setAttr('age')">年龄</th>
+				<th ng-click="setAttr('high')">身高</th>
+			</tr>
+			<tr ng-repeat="v in person | orderBy:['age','-high']">
+				<td>{{v.id}}</td>
+				<td>{{v.name}}</td>
+				<td>{{v.age}}</td>
+				<td>{{v.high}}</td>
+			</tr>
+		</table> -->
+
+		<!-- {{person | orderBy:fn}} -->
+
+		<input type="text" ng-model="s">
+		<ul>
+			<li ng-repeat="v in arr | filter:ss:true">{{v}}</li>
+		</ul>
+	</div>
+</body>
+</html>

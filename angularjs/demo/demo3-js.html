@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="title">
+	<hr>
+	<div id="content"></div>
+	<script>
+	var title = document.querySelector('#title');
+	var content = document.querySelector('#content');
+	// title.onkeydown = function(){
+	// 	content.innerHTML = this.value;
+	// }
+
+	title.oninput = function(){
+		content.innerHTML = this.value;
+	}
+	</script>
+</body>
+</html>

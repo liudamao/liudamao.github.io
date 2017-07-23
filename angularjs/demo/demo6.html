@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+	app.controller('c1',function($scope){
+		$scope.num1 = 10;
+		$scope.num2= 20;
+	})
+	app.controller('c2',function($scope){
+		$scope.title = "hiedjfklsdjf"
+	})
+
+	app.controller('c3',function($scope){
+		$scope.person = {
+			name:'张三',
+			age:22,
+			say:function(){
+				alert(this.name)
+			}
+		}
+	})
+
+	app.controller('c4',function($scope){
+		$scope.arr=['111','22222','42323'];
+	})
+	</script>
+</head>
+<body>
+	<div ng-controller="c1">
+		<!-- 1 + 2 = 3 -->
+		{{num1+" + "+num2+'='+(num1+num2)}}
+		<hr>
+		{{num1-1}}
+	</div>
+
+	<div ng-controller="c2">
+		{{"这是要输出的字符"+title}}
+	</div>
+
+	<div ng-controller="c3">
+		<p ng-click="person.say()">我叫{{person.name}},我今年{{person.age}}！</p>
+
+	</div>
+
+
+	<div ng-controller="c4">
+		<!-- {{arr['0']}} -->
+
+		{{abcdefefe}}
+
+		{{arr?arr:arr[0]}}
+	</div>
+</body>
+</html>

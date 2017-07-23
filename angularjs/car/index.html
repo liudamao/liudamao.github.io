@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body >
+	<div class="container" ng-controller="fruit">
+		<div class="product">
+			<div class="item" ng-repeat="v in fruit">
+				<div class="img" style="background-image:url({{v.pic}});">
+				</div>
+				<div>
+					<span>{{v.price |currency:'￥'}}</span>
+					<button ng-click="buy(v)">购买</button>
+				</div>
+			</div>
+			
+		</div>
+
+
+		<div class="buycar">
+			<h3>购物车</h3>
+			<table>
+				<tr>
+					<th>编号</th>
+					<th>名称</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>总价</th>
+					<th>操作</th>
+				</tr>
+				<tr ng-repeat="v in car">
+					<td>{{$index+1}}</td>
+					<td>{{v.name}}</td>
+					<td>{{v.price |currency:'￥'}}</td>
+					<td><button ng-click="add(v)">+</button><input type="text" ng-model="v.nums"><button  ng-click="jian(v,$index)">-</button></td>
+					<td>{{v.nums*v.price |currency:'￥'}}</td>
+					<td><button ng-click="del($index)">DEL</button></td>
+				</tr>
+				<tr>
+					<td>总价</td>
+					<td colspan="5">
+						{{total|currency:'￥'}}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

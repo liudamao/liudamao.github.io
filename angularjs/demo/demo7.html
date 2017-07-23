@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+	app.controller('ctrl',function ($scope) {
+		$scope.title = "11111";
+		$scope.oaaaa = function(num){
+			return num*100;
+		}
+
+		$scope.changeTitle=function(){
+			$scope.title="hello world！";
+		}
+	})
+	</script>
+</head>
+<body>
+	<p ng-controller="ctrl" ng-click="changeTitle()">
+		{{title}}
+
+	
+		{{oaaaa(2)}}
+	</p>
+</body>
+</html>

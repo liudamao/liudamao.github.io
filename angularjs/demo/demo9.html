@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+
+	app.controller('c1',function ($scope,$rootScope) {
+		$rootScope.title = '11111111';
+		
+	})
+	app.controller('c2',function ($scope) {
+		
+	})
+	app.controller('c3',function ($scope) {
+
+	})
+	</script>
+</head>
+<body>
+	<div ng-controller="c1" style="border:1px solid red;">
+		<input type="text" ng-model="title">
+		<div ng-controller="c2" style="border:1px solid blue;">
+			{{title}}
+			
+		</div>
+
+		<div ng-controller="c2" style="border:1px solid purple;">
+			{{title}}
+		</div>
+	</div>
+</body>
+</html>

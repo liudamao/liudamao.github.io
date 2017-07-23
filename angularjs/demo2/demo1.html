@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+	/*
+		currency 
+		uppercase 
+		lowercase 
+		date 
+		number 
+		
+		filter 
+		limitTo 
+		orderBy
+	*/
+
+	app.controller('c',function($scope){
+		$scope.money1 = 10.323232323;
+		$scope.money2 = 99999999;
+		$scope.money3 = 2323213213123123213123;
+
+
+		$scope.name = 'zhang san';
+		$scope.say = "HI";
+
+		$scope.t1 = new Date();
+	})
+	</script>
+</head>
+<body>
+	<div ng-controller="c">
+		<p>{{money1}}</p>
+		<p>{{money1|currency:"$":3}}</p>
+		<p>{{money2|currency:'￥'}}</p>
+		<p>{{money3|currency}}</p>
+
+		<hr>
+		<p>{{name|uppercase}}</p>
+		<p>{{say | lowercase}}</p>
+
+		<hr>
+		{{t1|date}}
+
+		<p>{{t1|date:'medium'}}</p>
+		<p>{{t1|date:'GGGG yyyy/MM/dd HH:mm:ss EEEE a '}}</p>
+
+		<p>{{money1|number:2}}</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body{
+	margin:0;
+}
+.container{
+	width:1200px;
+	height:auto;
+	border:1px solid #ddd;
+	margin:0 auto;
+}
+.product{
+	width:450px;
+	border:1px solid red;
+	float:left;
+}
+.item{
+	width:140px;
+	background:#eee;
+	float:left;
+	margin:5px;
+}
+.item .img{
+	width:120px;
+	height:120px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:cover;
+	margin:10px;
+	float:left;
+}
+
+.buycar{
+	width:400px;
+	height:auto;
+	float:right;
+	border:1px solid #ccc;
+	padding:20px;
+}
+.buycar table{
+	width:100%;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+	border-collapse: separate;
+    border-spacing: 0px;
+}
+.buycar table td{
+	text-align:center;
+}
+.buycar table th,.buycar table td{
+	padding:5px 2px;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	
+}

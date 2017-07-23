@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+	app.controller('c',function($scope){
+		$scope.flag = false;
+	})
+	</script>
+	<style>
+	.box{
+		width:300px;
+		height:300px;
+		background:#666;
+	}
+	</style>
+</head>
+<body ng-controller="c">
+	<button ng-click="flag=true">显示</button>
+	<div class="box" ng-show="flag">
+		<div>
+			用户：<input type="text">
+		</div>
+		<div>
+			密码：<input type="text">
+		</div>
+		<div>
+			<input type="submit" ng-click="flag=false">
+		</div>
+		<button ng-click="flag=false">隐藏</button>
+	</div>
+</body>
+</html>

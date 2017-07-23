@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+	app.controller('c',function($scope,$filter){
+		$scope.str = "官方指南假设你已有 HTML、CSS 和 JavaScript 中级前端知识。如果你刚开始学习前端开发，将框架作为你的第一步可能不是最好的主意——掌握好基础知识再来！之前有其他框架的使用经验对于学习 Vue.js 是有帮助的，但这不是必需的。";
+		$scope.person = ['张三','李四','王武','赵柳','啊啊'];
+
+		$scope.s = $filter('sortZh')($scope.person,'-')
+	});
+	// $filter('ellipsis')(str,);
+	// 超过指定字符出现省略号
+	app.filter('ellipsis',function(){
+		return function(str,clipnum,tag){
+			var tag = tag||'...';
+			return str.substr(0,clipnum)+tag;
+		}
+	})
+	
+	
+	// ['张三','李四','王武','赵柳']
+	app.filter('sortZh',function(){
+		return function(arr,attr='+'){
+			return arr.sort(function(a,b){
+				if(attr=='+'){
+					return a.localeCompare(b);
+				}else if(attr=='-'){
+					return b.localeCompare(a);
+				}	
+			})
+		}
+	})
+
+	var s = ['张三','李四','王武','赵柳','啊啊'];
+	var aa = s.sort(function(a,b){
+		return a.localeCompare(b);
+	})
+	document.write(aa)
+	</script>
+	
+</head>
+<body>
+	<div ng-controller="c">
+		{{str|ellipsis:50}}	
+
+		{{s}}
+	</div>
+</body>
+</html>

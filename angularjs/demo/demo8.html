@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+	var app = angular.module('app',[]);
+	// [$scope,$rootScope,$http,$interval,$timeout,$window,$document]
+	app.run(function($rootScope){
+		$rootScope.title = "我是root"
+	})
+
+
+	app.controller('c1',function ($scope,$rootScope) {
+		// $scope.title = "kkkkkkkkkk"
+		
+	})
+
+	app.controller('c2',function ($scope) {
+		// $scope.title = "22222222222222"
+	})
+	</script>
+</head>
+<body>
+	<div ng-controller="c1" style="border:1px solid red;">
+		{{title}}
+		<div ng-controller="c2" style="border:1px solid blue;">
+			{{title}}
+		</div>
+	</div>
+</body>
+</html>
